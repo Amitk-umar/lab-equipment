@@ -1,0 +1,7 @@
+{
+  "name": "Lab Instrument Manager",
+  "description": "Inventory and maintenance tracking app for lab equipment with QR code scanning and alerts.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
