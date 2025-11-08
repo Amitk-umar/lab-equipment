@@ -107,21 +107,24 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ instruments, booki
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie
-                activeIndex={activeIndex}
-                activeShape={renderActiveShape}
-                data={statusData}
-                cx="50%"
-                cy="50%"
-                innerRadius={70}
-                outerRadius={90}
-                fill="#8884d8"
-                dataKey="value"
-                onMouseEnter={onPieEnter}
-              >
-                {statusData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[entry.name as InstrumentStatus]} />
-                ))}
-              </Pie>
+  {...({
+    activeIndex,
+    activeShape: renderActiveShape,
+    data: statusData,
+    cx: "50%",
+    cy: "50%",
+    innerRadius: 70,
+    outerRadius: 90,
+    fill: "#8884d8",
+    dataKey: "value",
+    onMouseEnter: onPieEnter,
+  } as any)}
+>
+  {statusData.map((entry, index) => (
+    <Cell key={`cell-${index}`} fill={COLORS[entry.name as InstrumentStatus]} />
+  ))}
+</Pie>
+
             </PieChart>
           </ResponsiveContainer>
         </div>
