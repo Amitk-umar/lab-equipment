@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import type { Instrument, Booking } from "../types";
+import type { Instrument, Booking } from "../../types";
 
 interface CalendarViewProps {
   instruments: Instrument[];
